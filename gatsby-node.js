@@ -35,6 +35,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   //     },
   //   })
   // })
+  /*
   const posts = result.data.allMarkdownRemark.nodes
   posts.forEach(post => {
     createPage({
@@ -45,7 +46,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   })
-
+*/
   // Create blog-list pages
   // const posts = result.data.allMarkdownRemark.edges
   // const postsPerPage = 6
