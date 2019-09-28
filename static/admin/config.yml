@@ -1,0 +1,91 @@
+backend:
+  name: git-gateway
+  branch: master
+  repo: UjjalKar/letsSeeCms
+
+media_folder: static/image
+public_folder: /image
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "category", name: "category", widget: "list" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { lable: "seoTags", name: "seoTags", widget: "list" }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "relation",
+          collection: "authors",
+          searchFields: ["title", "firstName", "lastName"],
+          valueField: "title",
+        }
+  - name: "authors"
+    label: "Authors"
+    folder: "src/authors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "author" }
+      - { label: "Full Name", name: "title", widget: "string" }
+      - { label: "First Name", name: "firstName", widget: "string" }
+      - { label: "Last Name", name: "lastName", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Profile Picture", name: "profilePicture", widget: "image" }
+      - { label: "Email", name: "email", widget: "string" }
+
+  - name: "Products"
+    label: "Products"
+    folder: "src/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Layout",
+          name: "layout",
+          widget: "hidden",
+          default: "products",
+        }
+      - { label: "Name", name: "name", widget: "string" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "relation",
+          collection: "products-category",
+          searchFields: ["catName"],
+          valueField: "catName",
+        }
+      - { label: "Descrption", name: "description", widget: "text" }
+      - { label: "Product Image", name: "product-image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "products-category"
+    label: "Products Category"
+    folder: "src/Product-Category"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Layout",
+          name: "layout",
+          widget: "hidden",
+          default: "category",
+        }
+      - { label: "Category Name", name: "catName", widget: "string" }
+      - { label: "Descrption", name: "description", widget: "text" }
