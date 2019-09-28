@@ -16,7 +16,7 @@ const SinglePost = ({ data }) => {
       <Helmet>
         <meta
           name="keywords"
-          content={data.markdownRemark.frontmatter.tags.map(tag => `${tag},`)}
+          // content={data.markdownRemark.frontmatter.tags.map(tag => `${tag},`)}
         />
       </Helmet>
       <SEO
