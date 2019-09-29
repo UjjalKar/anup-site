@@ -6,6 +6,5 @@ productCategory:
   - tesr
   - test5
 Price: 994
-productContent: tesr
 ---
-
+test
