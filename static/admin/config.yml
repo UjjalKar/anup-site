@@ -49,7 +49,6 @@ collections:
       - { label: "Position", name: "position", widget: "string" }
       - { label: "Profile Picture", name: "profilePicture", widget: "image" }
       - { label: "Email", name: "email", widget: "string" }
-
   - name: "Products"
     label: "Products"
     folder: "src/products"
@@ -65,19 +64,18 @@ collections:
       - { label: "Name", name: "name", widget: "string" }
       - {
           label: "Category",
-          name: "category",
+          name: "productsCategory",
           widget: "relation",
           collection: "products-category",
           searchFields: ["catName"],
           valueField: "catName",
         }
-      - { label: "Descrption", name: "description", widget: "text" }
+      - { label: "Descrption", name: "productdescription", widget: "text" }
       - { label: "Product Image", name: "product-image", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
+      - { label: "productBody", name: "productbody", widget: "markdown" }
   - name: "products-category"
     label: "Products Category"
-    folder: "src/Product-Category"
+    folder: "src/productCat"
     create: true
     slug: "{{slug}}"
     fields:
@@ -88,4 +86,4 @@ collections:
           default: "category",
         }
       - { label: "Category Name", name: "catName", widget: "string" }
-      - { label: "Descrption", name: "description", widget: "text" }
+      - { label: "Descrption", name: "productscategorydescription", widget: "text" }

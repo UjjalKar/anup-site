@@ -31,6 +31,20 @@ module.exports = {
         path: `${__dirname}/src/authors/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `productCat`,
+        path: `${__dirname}/src/productCat/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `products`,
+        path: `${__dirname}/src/products/`,
+      },
+    },
     `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-transformer-remark`,
