@@ -56,12 +56,19 @@ collections:
     identifier_field: productName
     slug: "{{slug}}"
     fields:
+      - {
+          label: "productLayout",
+          name: "productlayout",
+          widget: "hidden",
+          default: "product",
+        }
       - { label: "Product Name", name: "productName", widget: "string" }
       - {
           label: "Poduct Description",
           name: "productDescription",
           widget: "string",
         }
+      - { label: IndiaMart Link, name: "indiamartlink", widget: "string" }
       - { label: "Product Image", name: "productImage", widget: "image" }
       - {
           label: "Product Category",
@@ -71,4 +78,4 @@ collections:
             { label: "Category Name", name: "categoryName", widget: "string" },
         }
       - { label: "Price", name: "Price", widget: "number" }
-      - { label: "Product Content", name: "productContent", widget: "markdown" }
+      - { label: "Product Content", name: "body", widget: "markdown" }
