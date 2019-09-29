@@ -49,41 +49,26 @@ collections:
       - { label: "Position", name: "position", widget: "string" }
       - { label: "Profile Picture", name: "profilePicture", widget: "image" }
       - { label: "Email", name: "email", widget: "string" }
-  - name: "Products"
-    label: "Products"
+  - name: "ourproducts"
+    label: "Our Products"
     folder: "src/products"
     create: true
+    identifier_field: productName
     slug: "{{slug}}"
     fields:
+      - { label: "Product Name", name: "productName", widget: "string" }
       - {
-          label: "Layout",
-          name: "layout",
-          widget: "hidden",
-          default: "products",
+          label: "Poduct Description",
+          name: "productDescription",
+          widget: "string",
         }
-      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Product Image", name: "productImage", widget: "image" }
       - {
-          label: "Category",
-          name: "productsCategory",
-          widget: "relation",
-          collection: "products-category",
-          searchFields: ["catName"],
-          valueField: "catName",
+          label: "Product Category",
+          name: "productCategory",
+          widget: "list",
+          field:
+            { label: "Category Name", name: "categoryName", widget: "string" },
         }
-      - { label: "Descrption", name: "productdescription", widget: "text" }
-      - { label: "Product Image", name: "product-image", widget: "image" }
-      - { label: "productBody", name: "productbody", widget: "markdown" }
-  - name: "products-category"
-    label: "Products Category"
-    folder: "src/productCat"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {
-          label: "Layout",
-          name: "layout",
-          widget: "hidden",
-          default: "category",
-        }
-      - { label: "Category Name", name: "catName", widget: "string" }
-      - { label: "Descrption", name: "productscategorydescription", widget: "text" }
+      - { label: "Price", name: "Price", widget: "number" }
+      - { label: "Product Content", name: "productContent", widget: "markdown" }
