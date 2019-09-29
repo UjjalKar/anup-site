@@ -57,8 +57,8 @@ collections:
     slug: "{{slug}}"
     fields:
       - {
-          label: "productLayout",
-          name: "productlayout",
+          label: "Template Key",
+          name: "templateKey",
           widget: "hidden",
           default: "product",
         }
